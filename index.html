@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Sree Rama Clinic</title>
+    <style>
+        /* CSS: Clean, Medical, Trustworthy */
+        :root {
+            --primary-color: #0056b3; /* Medical Blue */
+            --secondary-color: #f0f8ff; /* Light Blue background */
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .booking-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .header h2 {
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #128C7E;
+        }
+
+        .disclaimer {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="booking-card">
+        <div class="header">
+            <h2>Sree Rama Clinic</h2>
+            <p>Psychiatry & De-addiction Centre</p>
+        </div>
+
+        <form id="appointmentForm" onsubmit="sendToWhatsapp(event)">
+            <div class="form-group">
+                <label for="name">Patient Name</label>
+                <input type="text" id="name" placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Example: 98765 43210" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason for Visit</label>
+                <select id="reason">
+                    <option value="General Consultation">General Consultation</option>
+                    <option value="Anxiety/Stress">Anxiety / Exam Stress</option>
+                    <option value="De-addiction">De-addiction / NDPS</option>
+                    <option value="Depression">Depression</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                Book via WhatsApp
+            </button>
+        </form>
+
+        <p class="disclaimer">Your data is secure. This will open WhatsApp to send details directly to the doctor.</p>
+    </div>
+
+    <script>
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+
+            // 1. Get Values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const reason = document.getElementById('reason').value;
+
+            // 2. YOUR CLINIC PHONE NUMBER (Replace this!)
+            const clinicNumber = "919494610659"; // Format: 91 + 10 digit number
+
+            // 3. Construct Message
+            const message = `*New Appointment Request*%0A%0A` +
+                            `👤 *Name:* ${name}%0A` +
+                            `📞 *Phone:* ${phone}%0A` +
+                            `📅 *Date:* ${date}%0A` +
+                            `📝 *Reason:* ${reason}`;
+
+            // 4. Open WhatsApp
+            const url = `https://wa.me/${clinicNumber}?text=${message}`;
+            window.open(url, '_blank').focus();
+        }
+    </script>
+
+</body>
+</html>
