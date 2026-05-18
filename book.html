@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architecture of Change | Dr. E. Arun Krishna</title>
+    <style>
+        :root {
+            --bg-color: #F5F2EB;     /* Warm beige background */
+            --primary-color: #4A5844; /* Olive green */
+            --accent-color: #B37143;  /* Glowing copper/wireframe accent */
+            --text-dark: #2C2C2C;     /* Dark concrete grey for text */
+            --card-bg: #EAE6DD;       /* Slightly darker beige for structure */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 5%;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 4fr 6fr;
+            }
+        }
+
+        .cover-art img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .author-tag {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .opt-in-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 4px;
+            margin-top: 40px;
+        }
+
+        .opt-in-box h2 {
+            margin-top: 0;
+            color: var(--bg-color);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .form-group {
+                flex-direction: row;
+            }
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #965B32;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid var(--card-bg);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Sree Rama Clinic Presents</h2>
+</header>
+
+<div class="container">
+    <div class="cover-art">
+        <img src="image.png" alt="The Architecture of Change Book Cover">
+    </div>
+
+    <div class="book-details">
+        <p class="tagline">Log In. Execute. Evolve.</p>
+        <h1>The Architecture of Change</h1>
+        <p class="author-tag">by <strong>Dr. E. Arun Krishna, MD (Psychiatry)</strong></p>
+
+        <p>Have you ever felt like your brain is running too many background tabs, or that your "operating system" is crashing under the weight of a modern world it wasn't coded to handle?</p>
+        
+        <p>In <em>The Architecture of Change</em>, consultant psychiatrist Dr. E. Arun Krishna demystifies mental wellness through a brilliant 21st-century digital lens. By translating the complexities of the human psyche into the intuitive language of hardware, software, and network protocols, this groundbreaking "Systems Manual" removes the "sin" from the "sickness".</p>
+
+        <blockquote>
+            <strong>You are not a "broken" person; you are a high-performance system in need of a version update.</strong>
+        </blockquote>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Hardware Optimization</h3>
+                <p>Body, Habits, Environment, Routines, and Boundaries.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Software Integrity</h3>
+                <p>Thoughts, Emotions, Beliefs, Memories, and Meaning.</p>
+            </div>
+        </div>
+
+        <div class="opt-in-box">
+            <h2>Run a System Diagnostic</h2>
+            <p>Is your mental bandwidth leaking? Download the free <strong>10-Point Mind-System Diagnostic Checklist</strong> to identify background processes draining your cognitive energy.</p>
+
+
+    
+    <form action="https://formspark.io/f/YOUR_UNIQUE_ID" method="POST"> 
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Enter your professional email" required>
+            <button type="submit">Run Diagnostic</button>
+        </div>
+    </form>
+</div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Dr. E. Arun Krishna. All Rights Reserved. | <a href="#">Sree Rama Clinic</a></p>
+</footer>
+
+</body>
+</html>
